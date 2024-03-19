@@ -10,35 +10,22 @@ defmodule TradebearAsh.PropertyManagement.Note do
   code_interface do
     define_for TradebearAsh.PropertyManagement
 
-    define :create_client_note, action: :create
-    define :create_contact_note, action: :create
-    define :create_property_note, action: :create
+    define :create, action: :create
+    define :associate_with_client, action: :update
   end
 
   actions do
-    defaults [:create, :read, :update, :destroy]
+    defaults [:read, :update, :destroy]
 
-    create :create_client_note do
+    create :create do
       accept [:data]
 
-      argument :client_id, :uuid, allow_nil?: false
+      argument :client_id, :uuid
+      argument :contact_id, :uuid
+      argument :property_id, :uuid
 
       change manage_relationship(:client_id, :client, type: :append_and_remove)
-    end
-
-    create :create_contact_note do
-      accept [:data]
-
-      argument :contact_id, :uuid, allow_nil?: false
-
       change manage_relationship(:contact_id, :contact, type: :append_and_remove)
-    end
-
-    create :create_property_note do
-      accept [:data]
-
-      argument :property_id, :uuid, allow_nil?: false
-
       change manage_relationship(:property_id, :property, type: :append_and_remove)
     end
   end

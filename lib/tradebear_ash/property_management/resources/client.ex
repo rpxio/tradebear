@@ -27,7 +27,16 @@ defmodule TradebearAsh.PropertyManagement.Client do
 
   relationships do
     has_many :notes, TradebearAsh.PropertyManagement.Note
-    has_many :contacts, TradebearAsh.PropertyManagement.Contact
+
+    has_many :contacts, TradebearAsh.PropertyManagement.ClientContact do
+      destination_attribute :client_id
+    end
+
+    has_one :primary_contact, TradebearAsh.PropertyManagement.ClientContact do
+      filter expr(primary_contact)
+      destination_attribute :client_id
+    end
+
     has_many :properties, TradebearAsh.PropertyManagement.Property
   end
 end

@@ -35,6 +35,7 @@ defmodule TradebearAsh.MixProject do
       {:ash, "~> 2.20"},
       {:ash_postgres, "~> 1.5"},
       {:ash_phoenix, "~> 1.3"},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:phoenix, "~> 1.7.11"},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.10"},

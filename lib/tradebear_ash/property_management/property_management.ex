@@ -3,6 +3,7 @@ defmodule TradebearAsh.PropertyManagement do
 
   resources do
     resource TradebearAsh.PropertyManagement.Client
+    resource TradebearAsh.PropertyManagement.ClientContact
     resource TradebearAsh.PropertyManagement.Contact
     resource TradebearAsh.PropertyManagement.Note
     resource TradebearAsh.PropertyManagement.Property
