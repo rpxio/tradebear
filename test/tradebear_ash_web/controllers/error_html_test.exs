@@ -1,15 +1,15 @@
-defmodule TradebearAshWeb.ErrorHTMLTest do
-  use TradebearAshWeb.ConnCase, async: true
+defmodule TradebearWeb.ErrorHTMLTest do
+  use TradebearWeb.ConnCase, async: true
 
   # Bring render_to_string/4 for testing custom views
   import Phoenix.Template
 
   test "renders 404.html" do
-    assert render_to_string(TradebearAshWeb.ErrorHTML, "404", "html", []) == "Not Found"
+    assert render_to_string(TradebearWeb.ErrorHTML, "404", "html", []) == "Not Found"
   end
 
   test "renders 500.html" do
-    assert render_to_string(TradebearAshWeb.ErrorHTML, "500", "html", []) ==
+    assert render_to_string(TradebearWeb.ErrorHTML, "500", "html", []) ==
              "Internal Server Error"
   end
 end

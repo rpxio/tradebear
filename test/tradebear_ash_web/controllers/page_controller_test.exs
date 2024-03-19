@@ -1,5 +1,5 @@
-defmodule TradebearAshWeb.PageControllerTest do
-  use TradebearAshWeb.ConnCase
+defmodule TradebearWeb.PageControllerTest do
+  use TradebearWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

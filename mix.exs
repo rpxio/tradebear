@@ -1,9 +1,9 @@
-defmodule TradebearAsh.MixProject do
+defmodule Tradebear.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :tradebear_ash,
+      app: :tradebear,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule TradebearAsh.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {TradebearAsh.Application, []},
+      mod: {Tradebear.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -78,10 +78,10 @@ defmodule TradebearAsh.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind tradebear_ash", "esbuild tradebear_ash"],
+      "assets.build": ["tailwind tradebear", "esbuild tradebear"],
       "assets.deploy": [
-        "tailwind tradebear_ash --minify",
-        "esbuild tradebear_ash --minify",
+        "tailwind tradebear --minify",
+        "esbuild tradebear --minify",
         "phx.digest"
       ]
     ]

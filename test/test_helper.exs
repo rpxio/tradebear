@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(TradebearAsh.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Tradebear.Repo, :manual)
