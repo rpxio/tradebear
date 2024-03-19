@@ -29,6 +29,8 @@ config :tradebear_ash, TradebearAshWeb.Endpoint,
     tailwind: {Tailwind, :install_and_run, [:tradebear_ash, ~w(--watch)]}
   ]
 
+config :logger, level: :info
+
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

@@ -1,5 +1,8 @@
 defmodule TradebearAsh.Repo do
-  use Ecto.Repo,
-    otp_app: :tradebear_ash,
-    adapter: Ecto.Adapters.Postgres
+  use AshPostgres.Repo, otp_app: :tradebear_ash
+
+  # Installs Postgres extensions that ash commonly uses
+  def installed_extensions do
+    ["uuid-ossp", "citext"]
+  end
 end

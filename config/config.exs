@@ -9,7 +9,8 @@ import Config
 
 config :tradebear_ash,
   ecto_repos: [TradebearAsh.Repo],
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime],
+  ash_apis: [TradebearAsh.PropertyManagement]
 
 # Configures the endpoint
 config :tradebear_ash, TradebearAshWeb.Endpoint,
