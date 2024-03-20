@@ -17,11 +17,17 @@ defmodule TradebearWeb.Router do
   scope "/", TradebearWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", PropertyManagement.ClientsLive
     live "/clients", PropertyManagement.ClientsLive
     live "/clients/new", PropertyManagement.CreateClientLive
     live "/clients/:id", PropertyManagement.ClientDetailsLive
     live "/clients/:id/add_contact", PropertyManagement.AddContactLive
+    live "/clients/:id/add_property", PropertyManagement.AddPropertyLive
+    live "/clients/:id/add_note", PropertyManagement.AddNoteLive
+
+    live "/contacts", PropertyManagement.ContactsLive
+
+    live "/properties", PropertyManagement.PropertiesLive
   end
 
   # Other scopes may use custom stacks.
