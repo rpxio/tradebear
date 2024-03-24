@@ -14,20 +14,26 @@ defmodule TradebearWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", TradebearWeb do
+  scope "/", TradebearWeb.PropertyManagement do
     pipe_through :browser
 
-    live "/", PropertyManagement.ClientsLive
-    live "/clients", PropertyManagement.ClientsLive
-    live "/clients/new", PropertyManagement.CreateClientLive
-    live "/clients/:id", PropertyManagement.ClientDetailsLive
-    live "/clients/:id/add_contact", PropertyManagement.AddContactLive
-    live "/clients/:id/add_property", PropertyManagement.AddPropertyLive
-    live "/clients/:id/add_note", PropertyManagement.AddNoteLive
+    live "/", ClientsLive
+    live "/clients", ClientsLive
+    live "/clients/new", CreateClientLive
+    live "/clients/:id", ClientDetailsLive
+    live "/clients/:id/add_contact", AddContactLive
+    live "/clients/:id/add_property", AddPropertyLive
+    live "/clients/:id/add_note", AddClientNoteLive
 
-    live "/contacts", PropertyManagement.ContactsLive
+    live "/contacts", ContactsLive
+    live "/contacts/new", CreateContactLive
+    live "/contacts/:id", ContactDetailsLive
+    live "/contacts/:id/add_note", AddContactNoteLive
 
-    live "/properties", PropertyManagement.PropertiesLive
+    live "/properties", PropertiesLive
+    live "/properties/new", CreatePropertyLive
+    live "/properties/:id", PropertyDetailsLive
+    live "/properties/:id/add_note", AddPropertyNoteLive
   end
 
   # Other scopes may use custom stacks.

@@ -11,6 +11,8 @@ defmodule Tradebear.PropertyManagement.Property do
     define_for Tradebear.PropertyManagement
 
     define :create, action: :create
+    define :get_by_id, args: [:id]
+    define :get_all, action: :read
   end
 
   actions do
@@ -22,6 +24,13 @@ defmodule Tradebear.PropertyManagement.Property do
       argument :client_id, :uuid, allow_nil?: false
 
       change manage_relationship(:client_id, :client, type: :append_and_remove)
+    end
+
+    read :get_by_id do
+      get? true
+      argument :id, :uuid, allow_nil?: false
+
+      filter expr(id == ^arg(:id))
     end
   end
 

@@ -12,6 +12,7 @@ defmodule Tradebear.PropertyManagement.Contact do
 
     define :create, action: :create
     define :link_to_client, args: [:destination_client_id, :primary?]
+    define :get_all, action: :read
     define :get_by_id, args: [:id]
   end
 
@@ -31,7 +32,7 @@ defmodule Tradebear.PropertyManagement.Contact do
       argument :destination_client_id, :uuid, allow_nil?: false
       argument :primary?, :boolean, allow_nil?: true, default: false
 
-      manual fn changeset, _ ->
+      manual fn changeset, _what ->
         with {:ok, client_id} <-
                Ash.Changeset.fetch_argument(changeset, :destination_client_id),
              {:ok, primary?} <- Ash.Changeset.fetch_argument(changeset, :primary?),
@@ -57,6 +58,14 @@ defmodule Tradebear.PropertyManagement.Contact do
   end
 
   relationships do
+    many_to_many :clients, Tradebear.PropertyManagement.Client do
+      through Tradebear.PropertyManagement.ClientContact
+      source_attribute :id
+      source_attribute_on_join_resource :contact_id
+      destination_attribute :id
+      destination_attribute_on_join_resource :client_id
+    end
+
     has_many :notes, Tradebear.PropertyManagement.Note do
       filter expr(not is_nil(contact_id))
       destination_attribute :contact_id

@@ -12,7 +12,7 @@ defmodule TradebearWeb.PropertyManagement.ClientsLive do
       >
         <div class="flex flex-col gap-1 items-left">
           <p class="text-lg"><%= client.name %></p>
-          <p class="text-md text-gray-400"><%= client.billing_address %></p>
+          <p class="text-sm text-gray-400 max-w-60 truncate"><%= client.billing_address %></p>
         </div>
         <div class="py-2">
           <.button type="button" phx-click="add_contact" phx-value-client-id={client.id}>

@@ -11,7 +11,6 @@ defmodule Tradebear.PropertyManagement.Note do
     define_for Tradebear.PropertyManagement
 
     define :create, action: :create
-    define :associate_with_client, action: :update
   end
 
   actions do
