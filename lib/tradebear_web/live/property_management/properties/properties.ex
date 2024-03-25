@@ -13,12 +13,9 @@ defmodule TradebearWeb.PropertyManagement.PropertiesLive do
         <p class="text-lg"><%= property.address %></p>
       </div>
       <div class="py-2">
-        <.button type="button" phx-click="add_note" phx-value-property-id={property.id}>
-          Add Note
-        </.button>
-        <.button type="button" phx-click="manage_property" phx-value-property-id={property.id}>
+        <button class="btn" phx-click="manage_property" phx-value-property-id={property.id}>
           Manage
-        </.button>
+        </button>
       </div>
     </div>
     """

@@ -26,12 +26,10 @@ defmodule TradebearWeb.Router do
     live "/clients/:id/add_note", AddClientNoteLive
 
     live "/contacts", ContactsLive
-    live "/contacts/new", CreateContactLive
     live "/contacts/:id", ContactDetailsLive
     live "/contacts/:id/add_note", AddContactNoteLive
 
     live "/properties", PropertiesLive
-    live "/properties/new", CreatePropertyLive
     live "/properties/:id", PropertyDetailsLive
     live "/properties/:id/add_note", AddPropertyNoteLive
   end

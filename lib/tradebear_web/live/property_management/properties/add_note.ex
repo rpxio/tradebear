@@ -8,7 +8,7 @@ defmodule TradebearWeb.PropertyManagement.AddPropertyNoteLive do
     <h2 class="text-2xl">Create Note for <%= @property.address %></h2>
     <.form for={@form} phx-change="validate_note" phx-submit="create_note">
       <.input field={@form[:data]} type="text" label="Note" autofocus />
-      <.button type="submit" class="float-right">Create</.button>
+      <button class="btn float-right">Create</button>
     </.form>
     """
   end

@@ -36,15 +36,15 @@ defmodule TradebearWeb.PropertyManagement.ClientDetailsLive do
     </div>
 
     <div class="pt-3 flex gap-3">
-      <.button type="action" phx-click="add_contact" phx-value-client-id={@client.id}>
+      <button class="btn" phx-click="add_contact" phx-value-client-id={@client.id}>
         Add Contact
-      </.button>
-      <.button type="action" phx-click="add_note" phx-value-client-id={@client.id}>
+      </button>
+      <button class="btn" phx-click="add_note" phx-value-client-id={@client.id}>
         Add Note
-      </.button>
-      <.button type="action" phx-click="add_property" phx-value-client-id={@client.id}>
+      </button>
+      <button class="btn" phx-click="add_property" phx-value-client-id={@client.id}>
         Add Property
-      </.button>
+      </button>
     </div>
     """
   end

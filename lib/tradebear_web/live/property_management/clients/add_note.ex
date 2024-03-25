@@ -7,7 +7,7 @@ defmodule TradebearWeb.PropertyManagement.AddClientNoteLive do
     <h2 class="py-5">Create Note for Client <%= @client.name %></h2>
     <.form for={@form} phx-change="validate_note" phx-submit="create_note">
       <.input type="text" field={@form[:data]} label="Note" autofocus />
-      <.button type="submit">Create</.button>
+      <button class="btn mt-2">Create</button>
     </.form>
     """
   end

@@ -12,16 +12,10 @@ defmodule TradebearWeb.PropertyManagement.ContactsLive do
           <p class="text-md text-gray-400 max-w-60 truncate"><%= contact.email %></p>
         </div>
         <div class="py-2">
-          <.button type="button" phx-click="add_note" phx-value-contact-id={contact.id}>
-            Add Note
-          </.button>
-          <.button type="button" phx-click="manage_contact" phx-value-contact-id={contact.id}>
+          <button class="btn" phx-click="manage_contact" phx-value-contact-id={contact.id}>
             Manage
-          </.button>
+          </button>
         </div>
-      </div>
-      <div id="meta_contact_actions" class="flex flex-row gap-5 justify-end">
-        <.button type="button" phx-click="create_contact">New Contact</.button>
       </div>
     </div>
     """

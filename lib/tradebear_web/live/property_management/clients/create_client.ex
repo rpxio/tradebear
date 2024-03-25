@@ -8,7 +8,7 @@ defmodule TradebearWeb.PropertyManagement.CreateClientLive do
     <.form for={@form} phx-change="validate_client" phx-submit="create_client">
       <.input type="text" field={@form[:name]} label="Client Name" />
       <.input type="text" field={@form[:billing_address]} label="Address" />
-      <.button type="submit">Create</.button>
+      <button class="btn mt-2">Create</button>
     </.form>
     """
   end

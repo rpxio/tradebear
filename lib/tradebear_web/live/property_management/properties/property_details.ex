@@ -17,9 +17,9 @@ defmodule TradebearWeb.PropertyManagement.PropertyDetailsLive do
     </div>
 
     <div class="pt-3 flex gap-3">
-      <.button type="action" phx-click="add_note" phx-value-property-id={@property.id}>
+      <button class="btn" phx-click="add_note" phx-value-property-id={@property.id}>
         Add Note
-      </.button>
+      </button>
     </div>
     """
   end

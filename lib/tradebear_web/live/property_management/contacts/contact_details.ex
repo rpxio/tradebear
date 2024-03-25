@@ -25,9 +25,9 @@ defmodule TradebearWeb.PropertyManagement.ContactDetailsLive do
       </div>
     </div>
     <div class="pt-3 flex gap-3">
-      <.button type="action" phx-click="add_note" phx-value-contact-id={@contact.id}>
+      <button class="btn" phx-click="add_note" phx-value-contact-id={@contact.id}>
         Add Note
-      </.button>
+      </button>
     </div>
     """
   end

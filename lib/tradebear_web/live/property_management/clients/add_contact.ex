@@ -10,7 +10,7 @@ defmodule TradebearWeb.PropertyManagement.AddContactLive do
       <.input type="text" field={@form[:email]} label="Email" />
       <.input type="text" field={@form[:phone]} label="Phone" />
       <.input type="text" field={@form[:address]} label="Address" />
-      <.button type="submit">Create</.button>
+      <button class="btn mt-2">Create</button>
     </.form>
     """
   end
