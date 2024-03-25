@@ -7,7 +7,7 @@ defmodule TradebearWeb.PropertyManagement.AddPropertyLive do
     <h2 class="py-5">Create Property for Client <%= @client.name %></h2>
     <.form for={@form} phx-change="validate_property" phx-submit="create_property">
       <.input type="text" field={@form[:address]} label="Address" autofocus />
-      <.button type="submit">Create</.button>
+      <button class="btn mt-2">Create</button>
     </.form>
     """
   end
